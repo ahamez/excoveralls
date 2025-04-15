@@ -21,7 +21,8 @@ defmodule ExCoveralls.Mixfile do
           "coveralls.html",
           "coveralls.json",
           "coveralls.post"
-        ])
+        ]),
+      xref: xref()
     ]
   end
 
@@ -74,6 +75,14 @@ defmodule ExCoveralls.Mixfile do
         "Changelog" => @source_url <> "/blob/master/CHANGELOG.md",
         "GitHub" => @source_url
       }
+    ]
+  end
+
+ defp xref() do
+    [
+      exclude: [
+        CAStore
+      ]
     ]
   end
 end
